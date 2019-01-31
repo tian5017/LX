@@ -69,6 +69,5 @@ def leven_str(str1, str2):
     return max(len(str1), len(str2)) - return_num
 
 
-
 if __name__ == "__main__":
-    print(leven_str("中国", "中华共和国"))
+    print("编辑距离：" + str(leven_str("哈哈", "中华共和国")))

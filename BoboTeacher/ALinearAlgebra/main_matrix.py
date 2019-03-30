@@ -86,8 +86,6 @@ def matrix_transformation_test():
     plt.show()
 
 
-
-
 if __name__ == "__main__":
     matrix_transformation_test()
 

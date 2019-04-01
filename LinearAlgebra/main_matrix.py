@@ -1,5 +1,5 @@
-from BoboTeacher.ALinearAlgebra.BMatrix import Matrix
-from BoboTeacher.ALinearAlgebra.AVector import Vector
+from LinearAlgebra.Matrix import Matrix
+from LinearAlgebra.Vector import Vector
 import numpy as np
 import matplotlib.pyplot as plt
 import math

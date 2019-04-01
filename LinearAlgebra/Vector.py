@@ -1,7 +1,7 @@
 # 向量类
 
 import math
-from ._globals import EPSILON
+from ._globals import *
 
 
 class Vector:
@@ -34,7 +34,7 @@ class Vector:
 
     def normalize(self):
         """返回向量的单位向量"""
-        if self.norm() < EPSILON:
+        if is_zero(self.norm()):
             raise ZeroDivisionError("Normalize error! norm is zero.")
         return Vector(self._values) / self.norm()
 
@@ -82,3 +82,7 @@ class Vector:
 
     def __str__(self):
         return "({})".format(", ".join(str(e) for e in self._values))
+
+    def underlying_list(self):
+        """返回当前向量对应的底层list"""
+        return self._values[:]

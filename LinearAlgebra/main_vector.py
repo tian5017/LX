@@ -1,4 +1,4 @@
-from BoboTeacher.ALinearAlgebra.AVector import Vector
+from LinearAlgebra.Vector import Vector
 
 if __name__ == "__main__":
 

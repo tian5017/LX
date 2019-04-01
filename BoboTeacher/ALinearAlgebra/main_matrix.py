@@ -36,6 +36,9 @@ def my_matrix_test():
     print("-----------------------")
     print(matrix.T())
     print(matrix3.T())
+    print("-----------------------")
+    I = Matrix.identity(2)  # 单位矩阵
+    print(I)
 
 
 # numpy中的matrix的测试
@@ -59,9 +62,19 @@ def np_matrix_test():
     print(a + c)  # 矩阵加向量
     print(a + 1)  # 广播机制
     print(a.dot(c))  # 矩阵乘向量
+    print("-----------------------")
+    i = np.identity(2)  # 单位矩阵
+    print(i)
+    print(a.dot(i))
+    print(i.dot(a))
+    print("-----------------------")
+    invA = np.linalg.inv(a)  # 逆矩阵(只有方阵才有逆矩阵)
+    print(invA)
+    print(a.dot(invA))
+    print(invA.dot(a))
 
 
-# 矩阵变换
+# 矩阵变换测试
 def matrix_transformation_test():
     points = [[0, 0], [0, 5], [3, 5], [3, 4], [1, 4],
               [1, 3], [2, 3], [2, 2], [1, 2], [1, 0]]
@@ -77,8 +90,9 @@ def matrix_transformation_test():
     # T = Matrix([[1, 0], [0, -1]])  # 翻转变换
     # T = Matrix([[1, 0.5], [0, 1]])  # 错切变换
     # T = Matrix([[1, 0.5], [0, 1]])  # 错切变换
-    theta = math.pi / 3  # 1/3弧度，等于60度
-    T = Matrix([[math.cos(theta), math.sin(theta)], [-math.sin(theta), math.cos(theta)]])  # 旋转变换
+    # theta = math.pi / 3  # 1/3弧度，等于60度
+    # T = Matrix([[math.cos(theta), math.sin(theta)], [-math.sin(theta), math.cos(theta)]])  # 旋转变换
+    T = Matrix([[0, -1], [1, 0]])
 
     P1 = T.dot(P0.T())
     plt.plot([P1.col_vector(i)[0] for i in range(P1.col_num())], [P1.col_vector(i)[1] for i in range(P1.col_num())])

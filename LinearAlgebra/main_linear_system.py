@@ -1,6 +1,7 @@
 from LinearAlgebra.Vector import Vector
 from LinearAlgebra.Matrix import Matrix
 from LinearAlgebra.LinearSystem import LinearSystem
+from LinearAlgebra.LinearSystem import inv
 
 
 if __name__ == "__main__":
@@ -24,6 +25,14 @@ if __name__ == "__main__":
     ls3 = LinearSystem(A3, b3)
     print(ls3.gauss_jordan_elimination())
     ls3.fancy_print()
+    print("-----------------------")
+    A4 = Matrix([[1, 2], [3, 4]])
+    invA4 = inv(A4)
+    print(invA4)
+    print(A4.dot(invA4))
+    print(invA4.dot(A4))
+
+
 
 
 
